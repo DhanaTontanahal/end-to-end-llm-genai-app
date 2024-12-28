@@ -1,0 +1,116 @@
+groq_api_key=''
+
+Lang chain is a framework which helps build LLm application easier.
+It is import chromadb
+chroma_client = chromadb.Client()
+opensource
+
+pip install langchain
+
+pip install langchain-groq
+
+from langchain_groq import ChatGroq
+
+llm = ChatGroq(
+model="mixtral-8x7b-32768",
+temperature=0,
+max_tokens=None,
+timeout=None,
+max_retries=2, # other params...
+)
+
+Chroma is the opensource AI application database
+Semantic search - Understanding the user intent
+Concept of embedding
+Numerical representation of text
+
+Word to VEC
+BERT
+
+Cosine similarity
+
+Query vector is matched with Stored milions of vector
+
+In traditional DB we use index
+
+Locality Sensitive hashing is one of the techniques being used by Vector DBs
+Store things in optimal way and retrieve data faster
+
+pip install chromadb
+
+In javascript use
+yarn install chromadb chromadb-default-embed
+
+from langchain_groq import ChatGroq
+
+llm = ChatGroq(
+
+    temperature=0,
+    groq_api_key='',
+    model="llama-3.1-70b-versatile",
+
+)
+
+response = llm.invoke("The first person to land on the moon");
+print(response)
+
+import chromadb
+client = chromadb.Client()
+collection = client.create_collection(name="my_collection")
+collection.add(
+documents=[
+"This document is about New York",
+"This document is about Delhi"
+],
+ids=['id1' , 'id2']
+)
+all_docs = collection.get()
+
+print(all_docs)
+
+Scrap the data from
+https://jobs.nike.com/job/R-48680
+
+WebbaseLoader is used to scrap the data
+https://python.langchain.com/docs/integrations/document_loaders/web_base/
+
+https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.prompt.PromptTemplate.html#prompttemplate
+
+https://python.langchain.com/api_reference/core/output_parsers/langchain_core.output_parsers.json.JsonOutputParser.html
+
+https://github.com/codebasics/project-genai-cold-email-generator/blob/main/my_portfolio.csv
+
+Lets say I have csv file
+
+Each of the techstack in first column , have a portfolio link in second column
+
+Whenever there is a job posting , it will extract skills from the job and
+
+match one or multiple of the technologiues present in teh csv file techstack first column
+
+then retrieve the portfolio urls when matched
+
+<!-- Use pandas to read csv
+
+import pandas as pd
+
+df = pd.read_csv("my_portfolio.csv")
+
+We iterate this data frame and insert one by one into the chromaDB
+import uuid;
+import chromadb;
+client = chromadb.PersistentClient("vectorstore")
+collection =  client.get_or_create_collection(name="portfolio")
+
+if not collection.count():
+    for _, row in df.iterrows():
+        collection.add(documents=row["Techstack"],
+                        metadatas={"links":row["Links"]},
+                        ids=str(uuid.uuid4())])
+
+links = collection.query(query_texts=["Experience in python", "Experience in React"],n_results=2).get('metadata') -->
+
+pip install streamlit
+https://pypi.org/project/python-dotenv/
+
+pip install python-dotenv
