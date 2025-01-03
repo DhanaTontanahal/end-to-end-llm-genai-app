@@ -7,7 +7,7 @@ import uuid;
 import chromadb;
 
 llm = ChatGroq(
-    groq_api_key='',
+    groq_api_key='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',
     model="llama-3.1-70b-versatile",
     temperature=0,
 )
@@ -66,14 +66,12 @@ prompt_email = PromptTemplate.from_template(
         {job_description}
         
         ### INSTRUCTION:
-        You are Mohan, a business development executive at AtliQ. AtliQ is an AI & Software Consulting company dedicated to facilitating
-        the seamless integration of business processes through automated tools. 
-        Over our experience, we have empowered numerous enterprises with tailored solutions, fostering scalability, 
-        process optimization, cost reduction, and heightened overall efficiency. 
-        Your job is to write a cold email to the client regarding the job mentioned above describing the capability of AtliQ 
-        in fulfilling their needs.
-        Also add the most relevant ones from the following links to showcase Atliq's portfolio: {link_list}
-        Remember you are Mohan, BDE at AtliQ. 
+        You are Dhana and you are a techfluencer.Create a linkedin post regarding the importance
+        of the technical skills summarizing the usecases of each skill in 2 lines
+        Also based on the skills match the portfolio developed by you and refer the portfolio links
+        in your linkedin post
+        Add a small quiz on the skills to engage the users
+        Also add the most relevant ones : {link_list}
         Do not provide a preamble.
         ### EMAIL (NO PREAMBLE):
         
